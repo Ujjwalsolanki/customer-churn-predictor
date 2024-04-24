@@ -1,0 +1,16 @@
+pandas 
+notebook
+numpy
+scikit-learn
+matplotlib
+PyYAML
+ensure
+joblib
+pyarrow
+kneed
+notebook
+config-box
+python-box
+ensure
+pathlib
+-e .
