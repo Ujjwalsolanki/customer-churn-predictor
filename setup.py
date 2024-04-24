@@ -9,7 +9,7 @@ __version__ = "0.0.0"
 
 REPO_NAME = "ML-Project-template"
 AUTHOR_USER_NAME = "UjjwalSolanki"
-SRC_REPO = "mlProject"
+SRC_REPO = "customer-churn-predictor"
 AUTHOR_EMAIL = "ujjwal.programmer@gmail.com"
 
 HYPHEN_E_DOT = '-e .'
