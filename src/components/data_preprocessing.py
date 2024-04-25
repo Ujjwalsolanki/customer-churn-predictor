@@ -21,7 +21,7 @@ class DataPreprocessing:
 
             df = self.convert_categorical_to_numeric(df)
 
-            df.to_csv(os.path.join('training_files/')+'cleaned_data.csv')
+            df.to_csv(os.path.join('training_files/')+'cleaned_data.csv' , index = False)
         except Exception as e:
             logging.exception(e)
             

@@ -1,1 +1,102 @@
-key: value
+LogisticRegression:
+  penalty:
+  - l1
+  - l2
+  - elasticnet
+  
+DecisionTree: 
+  criterion:
+    - gini
+    - entropy
+  splitter:
+    - best
+    - random
+  max_depth:
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+  max_leaf_nodes:
+    - 5
+    - 10
+    - 15
+
+RandomForest:
+  n_estimators:
+    - 8
+    - 16
+    - 32
+    - 64
+    - 128
+    - 256
+  criterion:
+    - gini
+    - entropy
+  max_leaf_nodes:
+    - 5
+    - 10
+    - 15
+
+AdaBoost: 
+  n_estimators: 
+    - 8
+    - 16
+    - 32
+    - 64
+    - 128
+    - 256
+  learning_rate: 
+    - 0.1
+    - 0.01
+    - 0.5
+    - 0.001
+
+GradientBoost:
+  n_estimators: 
+    - 8
+    - 16
+    - 32
+    - 64
+    - 128
+    - 256
+  learning_rate: 
+    - 0.1
+    - 0.01
+    - 0.5
+    - 0.001
+  loss:
+    - log_loss
+    - exponential
+  criterion:
+    - squared_error
+    - friedman_mse
+
+LightGradientBoost:
+  n_estimators: 
+    - 8
+    - 16
+    - 32
+    - 64
+    - 128
+    - 256
+  learning_rate: 
+    - 0.1
+    - 0.01
+    - 0.5
+    - 0.001
+    
+XGBClassifier:
+  n_estimators: 
+    - 8
+    - 16
+    - 32
+    - 64
+    - 128
+    - 256
+  learning_rate: 
+    - 0.5
+    - 0.1
+    - 0.01
+    - 0.001

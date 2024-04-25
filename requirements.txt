@@ -10,4 +10,6 @@ pyarrow
 pathlib
 python-box
 setuptools
+lightgbm
+xgboost
 -e .

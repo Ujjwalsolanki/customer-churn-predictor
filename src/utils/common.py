@@ -18,7 +18,7 @@ class FileOperations:
         pass
 
     @ensure_annotations
-    def read_yaml(self, path_to_yaml: Path) -> ConfigBox:
+    def read_yaml(self, path_to_yaml: Path):
         """Read YAML file
 
         Args:
