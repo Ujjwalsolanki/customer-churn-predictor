@@ -35,13 +35,14 @@ class DataPreprocessing:
             df.TotalCharges = pd.to_numeric(df.TotalCharges, errors="coerce")
             df.dropna(how='any', inplace=True)
 
-            df.Churn = np.where(df.Churn == 'Yes', 1,0)
+            if 'Churn' in df.columns:
+                df.Churn = np.where(df.Churn == 'Yes', 1,0)
 
-            df.gender = np.where(df.gender == 'Female', 1,0)
+            df.Gender = np.where(df.Gender == 'Female', 1,0)
             df.Partner = np.where(df.Partner == 'Yes', 1,0)
             df.Dependents = np.where(df.Dependents == 'Yes', 1,0)
-            df.tenure = df.tenure.apply(lambda x:x//12)
-            df.PhoneService = np.where(df.Dependents == 'Yes', 1,0)
+            # df.Tenure = df.Tenure.apply(lambda x:x//12)
+            df.PhoneService = np.where(df.PhoneService == 'Yes', 1,0)
             df.MultipleLines = np.where(df.MultipleLines == 'Yes', 1,
                                         (np.where(df.MultipleLines == 'No', 0,2)))
             df.InternetService = np.where(df.InternetService == 'No', 0,
@@ -53,11 +54,11 @@ class DataPreprocessing:
             df.StreamingTV = np.where(df.StreamingTV == 'Yes', 1,0)
             df.StreamingMovies = np.where(df.StreamingMovies == 'Yes', 1,0)
             df.Contract = np.where(df.Contract == 'Month-to-month', 0,
-                                        (np.where(df.InternetService == 'One year', 1,2)))
+                                        (np.where(df.Contract == 'One year', 1,2)))
             df.PaperlessBilling = np.where(df.PaperlessBilling == 'Yes', 1,0)
             df.PaymentMethod = np.where(df.PaymentMethod == 'Electronic check', 0,
-                                        (np.where(df.InternetService == 'Mailed check', 1,
-                                                (np.where(df.InternetService == 'Bank transfer (automatic)', 2,3)))))
+                                        (np.where(df.PaymentMethod == 'Mailed check', 1,
+                                                (np.where(df.PaymentMethod == 'Bank transfer (automatic)', 2,3)))))
             return df
         except Exception as e:
             logging.exception(e)

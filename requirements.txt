@@ -12,4 +12,6 @@ python-box
 setuptools
 lightgbm
 xgboost
--e .
+streamlit
+flask
+# -e .

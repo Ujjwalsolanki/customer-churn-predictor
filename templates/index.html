@@ -1,0 +1,176 @@
+<html>
+
+<body>
+    <div class="login">
+        <form action="{{ url_for('predict_data')}}" method="post">
+            <h1>
+                <legend>Student Exam Performance Prediction</legend>
+            </h1>
+            <div class="mb-3">
+                <label class="form-label">Gender</label>
+                <select class="form-control" name="Gender" placeholder="Enter you Gender" required>
+                    <option class="placeholder" selected disabled value="">Select your Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">SeniorCitizen</label>
+                <select class="form-control" name="SeniorCitizen" placeholder="Enter you Gender" required>
+                    <option class="placeholder" selected disabled value="">Select your Gender</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Partner</label>
+                <select class="form-control" name="Partner" placeholder="partner" required>
+                    <option class="placeholder" selected disabled value="">partner</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Dependents</label>
+                <select class="form-control" name="Dependents" placeholder="dependents" required>
+                    <option class="placeholder" selected disabled value="">Dependents</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tenure</label>
+                <input type="number" id="Tenure" name="Tenure" min="1" max="1000" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">PhoneService</label>
+                <select class="form-control" name="PhoneService" placeholder="PhoneService" required>
+                    <option class="placeholder" selected disabled value="">PhoneService</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">MultipleLines</label>
+                <select class="form-control" name="MultipleLines" placeholder="MultipleLines" required>
+                    <option class="placeholder" selected disabled value="">MultipleLines</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="No phone service">No phone service</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">InternetService</label>
+                <select class="form-control" name="InternetService" placeholder="InternetService" required>
+                    <option class="placeholder" selected disabled value="">InternetService</option>
+                    <option value="DSL">DSL</option>
+                    <option value="Fiber Optic">Fiber Optic</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">InternetService</label>
+                <select class="form-control" name="InternetService" placeholder="InternetService" required>
+                    <option class="placeholder" selected disabled value="">InternetService</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="No internet service">No internet service</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">OnlineBackup</label>
+                <select class="form-control" name="OnlineSecurity" placeholder="OnlineSecurity" required>
+                    <option class="placeholder" selected disabled value="">OnlineSecurity</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">OnlineBackup</label>
+                <select class="form-control" name="OnlineBackup" placeholder="OnlineBackup" required>
+                    <option class="placeholder" selected disabled value="">OnlineBackup</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="No internet service">No internet service</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">DeviceProtection</label>
+                <select class="form-control" name="DeviceProtection" placeholder="DeviceProtection" required>
+                    <option class="placeholder" selected disabled value="">DeviceProtection</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="No internet service">No internet service</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">TechSupport</label>
+                <select class="form-control" name="TechSupport" placeholder="TechSupport" required>
+                    <option class="placeholder" selected disabled value="">TechSupport</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="No internet service">No internet service</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">StreamingTV</label>
+                <select class="form-control" name="StreamingTV" placeholder="StreamingTV" required>
+                    <option class="placeholder" selected disabled value="">StreamingTV</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="No internet service">No internet service</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">StreamingMovies</label>
+                <select class="form-control" name="StreamingMovies" placeholder="StreamingMovies" required>
+                    <option class="placeholder" selected disabled value="">StreamingMovies</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="No internet service">No internet service</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Contract</label>
+                <select class="form-control" name="Contract" placeholder="Contract" required>
+                    <option class="placeholder" selected disabled value="">Contract</option>
+                    <option value="Month-to-month">Month-to-month</option>
+                    <option value="One Year">one year</option>
+                    <option value="two year">tow year</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">PaperlessBilling</label>
+                <select class="form-control" name="PaperlessBilling" placeholder="PaperlessBilling" required>
+                    <option class="placeholder" selected disabled value="">PaperlessBilling</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">PaymentMethod</label>
+                <select class="form-control" name="PaymentMethod" placeholder="PaymentMethod" required>
+                    <option class="placeholder" selected disabled value="">PaymentMethod</option>
+                    <option value="Electronic check">Electronic check</option>
+                    <option value="Mailed check">Mailed check</option>
+                    <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+                    <option value="Credit card (automatic)">Credit card (automatic)</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">TotalCharges</label>
+                <input type="number" id="TotalCharges" name="TotalCharges" min="0" max="10000" step="0.10" />
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Predict your Maths Score" required />
+            </div>
+        </form>
+        <h1>
+            THE prediction is {{results}}
+        </h1>
+
+        <body>
+
+</html>

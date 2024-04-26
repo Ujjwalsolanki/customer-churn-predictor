@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+import pickle
 from sklearn.model_selection import train_test_split
 from pathlib import Path
 from logger import logging
@@ -10,7 +11,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier
 from lightgbm import LGBMClassifier
 from xgboost import XGBClassifier
-from sklearn.metrics import classification_report, accuracy_score
+from sklearn.metrics import accuracy_score
 
 from sklearn.model_selection import GridSearchCV
 
@@ -60,9 +61,34 @@ class ModelTrainer:
 
                 report[list(models.keys())[i]] = test_model_score
 
-                logging.info(test_model_score)
+            best_model_score = max(sorted(report.values()))
 
-            return report
+            ## To get best model name from dict
+
+            best_model_name = list(report.keys())[
+                list(report.values()).index(best_model_score)
+            ]
+            best_model = models[best_model_name]
+
+            if best_model_score<0.6:
+                raise Exception("No best model found")
+            
+            logging.info(f"Best found model on both training and testing dataset")
+            logging.info("Best model: {0}".format(best_model_name))
+
+            file_path = os.path.join('artifacts/models','model.sav')
+            file_name = ''
+
+
+            logging.info('saving model')
+            with open(file_path, "wb") as file_obj:
+                pickle.dump(best_model, file_obj)
+
+            predicted=best_model.predict(X_test)
+
+            accuracy = accuracy_score(y_test, predicted)
+            logging.info("accuracy {0}".format(accuracy))
+            return accuracy
 
 
         except Exception as e:
